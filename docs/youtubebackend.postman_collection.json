@@ -1,0 +1,492 @@
+{
+  "info": {
+    "_postman_id": "e558a75a-345e-42b0-9fc6-bed98855e074",
+    "name": "youtubebackend",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59387695",
+    "_collection_link": "https://go.postman.co/collection/59387695-e558a75a-345e-42b0-9fc6-bed98855e074?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "login user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"danishbhai@dhh\",\r\n    \"password\":\"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/users/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "fullName",
+              "value": "Danish Hussain ",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "danish@cgmail.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "231454545",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "danish123",
+              "type": "text"
+            },
+            {
+              "key": "avatar",
+              "type": "file",
+              "src": [
+                "/C:/Users/danis/Downloads/my pic.jpg"
+              ]
+            },
+            {
+              "key": "coverImage",
+              "type": "file",
+              "src": [
+                "/C:/Users/danis/Downloads/IIT dhanbad certificate .jpeg"
+              ]
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/users/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "logout user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/users/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "publish video",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "videoFile",
+              "type": "file",
+              "src": [
+                "/C:/Users/danis/OneDrive/Desktop/phone videos/VID_190880728_203634_498.mp4"
+              ]
+            },
+            {
+              "key": "thumbnail",
+              "type": "file",
+              "src": [
+                "/C:/Users/danis/OneDrive/Pictures/Screenshots/Screenshot 2026-11-06 182829.png"
+              ]
+            },
+            {
+              "key": "title",
+              "value": "my first video",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "check the uploading",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/videos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "videos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "publish video Copy",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "updated title",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/videos/6af66d940d50bb74b643242f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "videos",
+            "6af66d940d50bb74b643242f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all videos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/videos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "videos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all videos Copy",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Updation check",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/videos/toggle/publish/6af66d940d50bb74b643242f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "videos",
+            "toggle",
+            "publish",
+            "6af66d940d50bb74b643242f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/videos/6af66d940d50bb74b643242f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "videos",
+            "6af66d940d50bb74b643242f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "subscribe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/subscriptions/c/6af67cffa210d203d5eab087",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "subscriptions",
+            "c",
+            "6af67cffa210d203d5eab087"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "channel profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "healthcheck test",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tweet check test",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"content\": \"my first tweet\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/tweets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "tweets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "like video",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/likes/toggle/v/6af90d06f4b9ec3f81cea7b2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "likes",
+            "toggle",
+            "v",
+            "6af90d06f4b9ec3f81cea7b2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "comment video",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"content\": \"nice video\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/comments/6af90d06f4b9ec3f81cea7b2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "comments",
+            "6af90d06f4b9ec3f81cea7b2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "playlist of videos",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"My first playlist\", \"description\": \"testing\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/playlists",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "playlists"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add video to playlist",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/playlists/add/6af90d06f4b9ec3f81cea7b2/6af90fe1f4b9ec3f81cea7b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "playlists",
+            "add",
+            "6af90d06f4b9ec3f81cea7b2",
+            "6af90fe1f4b9ec3f81cea7b6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "details of playlist",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "dashboard stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
