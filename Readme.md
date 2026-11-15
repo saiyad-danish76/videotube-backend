@@ -11,8 +11,8 @@ YouTube-jaisa backend: Node.js, Express 5, MongoDB (Mongoose), Cloudinary, JWT a
 
 ## Setup
 ```bash
-git clone https://github.com/saiyad-danish76/chai-backend
-cd chai-backend
+git clone https://github.com/saiyad-danish76/videotube-backend
+cd videotube-backend
 npm install
 copy .env.sample .env   # fill in your values
 npm run dev
