@@ -38,6 +38,23 @@ import dashboardRouter from "./routes/dashboard.routes.js"
  app.use("/api/v1/tweets", tweetRouter)
  app.use("/api/v1/playlists", playlistRouter)
  app.use("/api/v1/dashboard", dashboardRouter)
+ // 404 - jab koi route match na ho
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        message: `Route not found: ${req.method} ${req.originalUrl}`
+    })
+})
+
+// Global error handler - ApiError aur baaki saare errors yahan aayenge
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500
+    res.status(statusCode).json({
+        success: false,
+        message: err.message || "Internal Server Error",
+        errors: err.errors || []
+    })
+})
 
 
 export  {app}
