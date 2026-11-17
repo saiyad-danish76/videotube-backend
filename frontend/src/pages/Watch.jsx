@@ -116,13 +116,17 @@ export default function Watch() {
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <img
-            src={secure(video.owner.avatar)}
-            alt=""
-            className="h-10 w-10 rounded-full object-cover"
-          />
+                    <Link to={`/c/${video.owner.username}`}>
+            <img
+              src={secure(video.owner.avatar)}
+              alt=""
+              className="h-10 w-10 rounded-full object-cover"
+            />
+          </Link>
           <div>
-            <p className="font-semibold">{video.owner.fullName}</p>
+            <Link to={`/c/${video.owner.username}`} className="font-semibold hover:underline">
+              {video.owner.fullName}
+            </Link>
             {channel && (
               <p className="text-sm text-gray-400">{channel.subscribersCount} subscribers</p>
             )}

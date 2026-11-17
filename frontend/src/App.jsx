@@ -6,6 +6,7 @@ import Register from "./pages/Register"
 import Home from "./pages/Home"
 import Watch from "./pages/Watch"
 import Upload from "./pages/Upload"
+import Channel from "./pages/Channel"
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/watch/:videoId" element={<Watch />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/c/:username" element={<Channel />} />
       </Route>
     </Routes>
   )

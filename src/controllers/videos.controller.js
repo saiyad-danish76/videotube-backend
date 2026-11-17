@@ -4,6 +4,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { Video } from "../models/video.model.js";
 import { uploadToCloudinary } from "../utils/cloudinary.js";
 import mongoose from "mongoose";
+import { User } from "../models/user.model.js";
 
 const publishAVideo = asyncHandler(async (req, res) => {
   const { title, description } = req.body;
@@ -96,6 +97,12 @@ const getVideoById = asyncHandler(async (req, res) => {
   if (!video) {
     throw new ApiError(404, "Video not found");
   }
+    await Video.findByIdAndUpdate(videoId, { $inc: { views: 1 } });
+  video.views += 1;
+
+  await User.findByIdAndUpdate(req.user._id, {
+    $addToSet: { watchHistory: videoId },
+  });
 
   return res
     .status(200)

@@ -40,11 +40,13 @@ export default function Navbar() {
           <Link to="/upload" className="rounded bg-gray-800 px-3 py-1.5 text-sm hover:bg-gray-700">
             Upload
           </Link>
-          <img
-            src={secure(user.avatar)}
-            alt={user.username}
-            className="h-9 w-9 rounded-full object-cover"
-          />
+                <Link to={`/c/${user.username}`}>
+            <img
+              src={secure(user.avatar)}     
+              alt={user.username}
+              className="h-9 w-9 rounded-full object-cover"
+            />
+          </Link>
           <button
             onClick={handleLogout}
             className="rounded bg-red-600 px-3 py-1.5 text-sm hover:bg-red-500"
