@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { useAuth } from "../context/AuthContext"
 import { useNavigate, Link } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
 
 export default function Login() {
   const { login } = useAuth()
@@ -58,7 +57,14 @@ export default function Login() {
         >
           {submitting ? "Logging in..." : "Login"}
         </button>
+
+        <p className="text-center text-sm text-gray-400">
+          New here?{" "}
+          <Link to="/register" className="text-red-400 hover:underline">
+            Register
+          </Link>
+        </p>
       </form>
     </div>
   )
-}
+}a

@@ -37,6 +37,9 @@ export default function Navbar() {
 
       {user && (
         <div className="flex items-center gap-3">
+          <Link to="/upload" className="rounded bg-gray-800 px-3 py-1.5 text-sm hover:bg-gray-700">
+            Upload
+          </Link>
           <img
             src={secure(user.avatar)}
             alt={user.username}

@@ -4,6 +4,8 @@ import Layout from "./components/Layout"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
+import Watch from "./pages/Watch"
+import Upload from "./pages/Upload"
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
         }
       >
         <Route path="/" element={<Home />} />
+        <Route path="/watch/:videoId" element={<Watch />} />
+        <Route path="/upload" element={<Upload />} />
       </Route>
     </Routes>
   )
