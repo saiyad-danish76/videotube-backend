@@ -1,20 +1,16 @@
-import { Routes, Route } from "react-router-dom"
-import ProtectedRoute from "./components/ProtectedRoute"
-import Login from "./pages/Login"
-import Home from "./pages/Home"
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+import { BrowserRouter } from "react-router-dom"
+import "./index.css"
+import App from "./App.jsx"
+import { AuthProvider } from "./context/AuthContext.jsx"
 
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
-  )
-}
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
+  </StrictMode>
+)
